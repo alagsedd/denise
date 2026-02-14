@@ -1,0 +1,91 @@
+:root {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: CanvasText;
+  background-color: Canvas;
+
+  --page-max: 980px;
+  --gutter: max(1rem, env(safe-area-inset-left), env(safe-area-inset-right));
+
+  --border: color-mix(in oklab, CanvasText 14%, transparent);
+  --border-strong: color-mix(in oklab, CanvasText 20%, transparent);
+  --muted: color-mix(in oklab, CanvasText 72%, transparent);
+
+  --surface-1: color-mix(in oklab, Canvas 92%, CanvasText 8%);
+  --surface-2: color-mix(in oklab, Canvas 96%, CanvasText 4%);
+  --shadow: 0 18px 50px color-mix(in oklab, CanvasText 12%, transparent);
+
+  --valentine: oklch(68% 0.22 12);
+  --valentine-glow: color-mix(in oklab, var(--valentine) 44%, transparent);
+  --valentine-border: color-mix(in oklab, var(--valentine) 78%, var(--border));
+  --valentine-ink: color-mix(in oklab, var(--valentine) 72%, CanvasText);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+
+  background:
+    radial-gradient(
+        900px 540px at 14% -10%,
+        color-mix(in oklab, var(--valentine-glow) 92%, CanvasText 8%),
+        transparent 60%
+      ),
+    radial-gradient(
+        760px 520px at 90% 10%,
+        color-mix(in oklab, var(--valentine-glow) 55%, transparent),
+        transparent 55%
+      ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, Canvas 92%, CanvasText 8%),
+      Canvas 70%
+    );
+
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-color: color-mix(in oklab, var(--valentine) 60%, currentColor);
+}
+
+a:hover {
+  color: var(--valentine-ink);
+}
+
+::selection {
+  background: color-mix(in oklab, var(--valentine) 35%, Canvas);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+}
+

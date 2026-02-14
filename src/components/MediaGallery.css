@@ -1,0 +1,99 @@
+.gallery {
+  margin-top: 2rem;
+}
+
+.galleryHeader {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.galleryTitle {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.gallerySubtitle {
+  margin: 0;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+.galleryGrid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.galleryCard {
+  border: 1px solid var(--valentine-border);
+  border-radius: 18px;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--valentine) 18%, var(--surface-2)),
+      color-mix(in oklab, var(--surface-1) 92%, transparent)
+    );
+  box-shadow: var(--shadow);
+}
+
+.galleryMedia {
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklab, Canvas 80%, CanvasText 20%);
+  height: var(--thumb-h, 210px);
+  overflow: hidden;
+}
+
+.galleryImage,
+.galleryVideo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.galleryBody {
+  padding: 0.75rem 0.9rem 0.9rem;
+}
+
+.galleryLabel {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.galleryCaption {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+}
+
+@media (min-width: 720px) {
+  .gallery {
+    --thumb-h: 220px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 560px) {
+  .galleryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1040px) {
+  .gallery {
+    --thumb-h: 200px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

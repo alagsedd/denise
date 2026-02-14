@@ -1,0 +1,109 @@
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.container {
+  width: min(var(--page-max), calc(100% - (var(--gutter) * 2)));
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 3.25rem 0 1.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  margin: 0 0 0.75rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--valentine-border);
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--valentine) 12%, var(--surface-2)),
+      color-mix(in oklab, var(--surface-2) 92%, transparent)
+    );
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--valentine-ink);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+
+  position: relative;
+  isolation: isolate;
+  text-shadow: 0 0 22px color-mix(in oklab, var(--valentine) 26%, transparent);
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  left: -0.15em;
+  bottom: 0.05em;
+  height: 0.52em;
+  width: min(18ch, 100%);
+  z-index: -1;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--valentine) 42%, transparent),
+    color-mix(in oklab, var(--valentine) 18%, transparent)
+  );
+  filter: blur(0.2px);
+}
+
+.intro {
+  margin: 0.75rem 0 0;
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.main {
+  padding: 1.25rem 0 2.5rem;
+}
+
+.footer {
+  padding: 1.5rem 0 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 420px) {
+  .hero {
+    padding: 2.5rem 0 1.25rem;
+  }
+
+  .kicker {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.55rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .main {
+    padding: 1rem 0 2rem;
+  }
+
+  .footer {
+    padding: 1.25rem 0 2.25rem;
+  }
+}
+
+.footerNote {
+  margin: 0;
+  color: var(--muted);
+}
