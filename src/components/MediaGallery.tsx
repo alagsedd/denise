@@ -12,49 +12,49 @@ type MediaItem = {
 };
 
 const videoCaptions = [
-  "Mamacita, I replay this because it feels like home.",
-  "Denise, the way you move through life is beautiful to watch.",
-  "Mamacita, this is my favorite kind of ‘us’.",
-  "I love you, Denise — every second with you is a gift.",
-  "Mamacita, your vibe is my peace.",
-  "Denise Achana Wenawome, you make my heart smile.",
-  "Mamacita, I could watch you laugh forever.",
-  "Denise, you’re the sweetest part of my day.",
-  "Mamacita, this is the kind of love I prayed for.",
-  "Denise, you’re my favorite memory in motion.",
-  "Mamacita, on repeat — because I never get tired of you.",
-  "Denise, you’re my forever.",
+  "Mamacita, I replay this because hearing your joy feels like medicine to my soul.",
+  "Denise, watching you exist is one of my favorite ways to thank God.",
+  "Mamacita, this is the kind of moment that makes forever feel too short.",
+  "I love you, Denise, in all the seconds between here and eternity.",
+  "Mamacita, your presence quiets every fear I carry.",
+  "Denise Achana Wenawome, you make my heart feel seen and safe.",
+  "Mamacita, I could watch you laugh for a lifetime and still want one more minute.",
+  "Denise, even my hardest days soften when I hear your voice.",
+  "Mamacita, this is the love I used to write about before I ever met you.",
+  "Denise, every frame here is my heart saying yes to you again.",
+  "Mamacita, on repeat because loving you never gets old.",
+  "Denise, if forever has a name, it is yours in my mouth.",
 ];
 
 const imageCaptions = [
-  "Mamacita, you look like love in real life.",
-  "Denise, you’re the prettiest peace I’ve ever known.",
-  "Mamacita, I fall for you all over again here.",
-  "Denise Achana Wenawome, you make my heart feel safe.",
-  "Mamacita, your smile is my favorite sunrise.",
-  "Denise, you make the simple moments feel expensive.",
-  "Mamacita, I love the way we look when we’re happy.",
-  "Denise, being yours is my favorite place to be.",
-  "Mamacita, this is the kind of memory I keep forever.",
-  "Denise, you’re my softness and my strength.",
-  "Mamacita, I love the way your eyes tell the truth.",
-  "Denise, you make love feel gentle.",
-  "Mamacita, I’m grateful for you in every timeline.",
-  "Denise Achana Wenawome, you’re my answered prayer.",
-  "Mamacita, you’re my favorite view, every day.",
-  "Denise, you turn ordinary into unforgettable.",
-  "Mamacita, I love you louder than words.",
-  "Denise, you’re the sweetest chapter in my life.",
-  "Mamacita, your beauty is calm, not noisy.",
-  "Denise, you’re the kind of love I’ll protect.",
-  "Mamacita, you feel like home and adventure.",
-  "Denise, you’re my favorite yes.",
-  "Mamacita, this photo is proof that love is real.",
-  "Denise, I’m proud to love you openly.",
-  "Mamacita, I choose you — again and again.",
-  "Denise, you’re my heart’s favorite habit.",
-  "Mamacita, you’re beautiful in a way that’s rare.",
-  "Denise Achana Wenawome, I love you more than yesterday.",
+  "Mamacita, you look like love made visible.",
+  "Denise, you are the prettiest peace my heart has ever touched.",
+  "Mamacita, I fall in love with you here all over again.",
+  "Denise Achana Wenawome, you make my heart feel protected and understood.",
+  "Mamacita, your smile is my sunrise after every dark night.",
+  "Denise, you turn simple moments into treasures I would never trade.",
+  "Mamacita, happiness looks so good on us.",
+  "Denise, being yours is my safest address.",
+  "Mamacita, this memory is stitched into my soul forever.",
+  "Denise, you are my softness and my courage.",
+  "Mamacita, your eyes speak a language my heart is fluent in.",
+  "Denise, you make love feel pure and unafraid.",
+  "Mamacita, in every season, I remain grateful for you.",
+  "Denise Achana Wenawome, you are my answered prayer with a heartbeat.",
+  "Mamacita, I could look at you forever and still ask for one more look.",
+  "Denise, you make ordinary days feel unforgettable.",
+  "Mamacita, my love for you is louder than anything I can write.",
+  "Denise, you are the sweetest chapter and the best ending.",
+  "Mamacita, your beauty is gentle and endlessly deep.",
+  "Denise, you are the love I will guard with my whole heart.",
+  "Mamacita, with you I feel both home and wonder.",
+  "Denise, you are still my favorite yes.",
+  "Mamacita, this photo is proof that miracles can wear a smile.",
+  "Denise, I will always be proud to love you publicly and privately.",
+  "Mamacita, I choose you in joy, in storms, in everything.",
+  "Denise, loving you is my heart's favorite rhythm.",
+  "Mamacita, your beauty is rare because your heart is rare.",
+  "Denise Achana Wenawome, every day with you makes my love deeper.",
 ];
 
 const mediaByPath = import.meta.glob(
@@ -225,7 +225,8 @@ export default function MediaGallery() {
                       const video = e.currentTarget;
                       if (visibleVideosRef.current.has(video)) {
                         const p = video.play();
-                        if (p && typeof p.catch === "function") p.catch(() => {});
+                        if (p && typeof p.catch === "function")
+                          p.catch(() => {});
                       }
                     }}
                     onLoadedMetadata={(e) => {

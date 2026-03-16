@@ -13,20 +13,28 @@ export type LoveTimelineContent = {
   entries: TimelineEntry[]
 }
 
-const imageUrl = (relativePath: string) =>
-  new URL(relativePath, import.meta.url).toString()
+const timelineImageModules = import.meta.glob(
+  './assets/babesImages/*.{jpg,jpeg,png,webp,gif}',
+  { eager: true, query: '?url', import: 'default' },
+) as Record<string, string>
+
+const imageUrl = (relativePath: string) => {
+  const assetPath = relativePath.replace(/^\.\/assets\//, './assets/')
+  return timelineImageModules[assetPath] ?? ''
+}
 
 export const content: LoveTimelineContent = {
   title: 'Denise — My Mamacita',
   intro:
-    'A little collection of moments I never want to forget — your smile, our laughs, and the way you make everything feel like home. Denise Achana Wenawome, you are my Mamacita.',
-  footerNote: 'I love you, Mamacita — today, tomorrow, always.',
+    'This is my love letter in memories. Every photo is a heartbeat, every moment is a promise, and every smile of yours reminds me that God was kind to me. Denise Achana Wenawome, loving you is the softest, truest thing I have ever known.',
+  footerNote:
+    'If one day you forget how deeply you are loved, read this again and hear my heart saying your name: Denise, my Mamacita, my forever.',
   entries: [
     {
       date: '2026-02-14',
-      title: 'My favorite view, Mamacita',
+      title: 'The face my soul recognizes',
       description:
-        'Every time I look at you, I remember why I choose you, Denise. Soft love, safe love, our love.',
+        'Every time I look at you, I feel chosen by life itself. You are not just beautiful, Denise, you are the place where my restless heart finally learned to breathe.',
       image: imageUrl(
         './assets/babesImages/WhatsApp Image 2026-02-14 at 3.45.49 PM.jpeg',
       ),
@@ -34,9 +42,9 @@ export const content: LoveTimelineContent = {
     },
     {
       date: '2026-02-14',
-      title: 'That Denise smile',
+      title: 'Your smile, my sunrise',
       description:
-        'You smile and the whole day gets lighter. Thank you for being my peace and my joy, Mamacita.',
+        'When you smile, the whole world feels forgiven. You turn ordinary mornings into miracles and make me believe love can really heal everything.',
       image: imageUrl(
         './assets/babesImages/WhatsApp Image 2026-02-14 at 3.45.49 PM (1).jpeg',
       ),
@@ -44,9 +52,9 @@ export const content: LoveTimelineContent = {
     },
     {
       date: '2026-02-14',
-      title: 'My calm in the noise',
+      title: 'The quiet after every storm',
       description:
-        'Even when life is loud, you make everything feel quiet and okay. I love the way we understand each other, Denise.',
+        'Even when life is loud, your voice finds me and brings me back to peace. In your love, I have found shelter, softness, and a home that never closes its door.',
       image: imageUrl(
         './assets/babesImages/WhatsApp Image 2026-02-14 at 3.45.49 PM (2).jpeg',
       ),
@@ -54,9 +62,9 @@ export const content: LoveTimelineContent = {
     },
     {
       date: '2026-02-14',
-      title: 'The “we” I prayed for',
+      title: 'My answered prayer',
       description:
-        'You and me just makes sense. I’m grateful for the way you love me — patient, real, and true, Mamacita.',
+        'I prayed for a love that was real, patient, and kind, and then you happened. You are the prayer I get to hold with both hands.',
       image: imageUrl(
         './assets/babesImages/WhatsApp Image 2026-02-14 at 3.45.49 PM (3).jpeg',
       ),
@@ -64,9 +72,9 @@ export const content: LoveTimelineContent = {
     },
     {
       date: '2026-02-14',
-      title: 'Candid, but unforgettable',
+      title: 'Unplanned, unforgettable, ours',
       description:
-        'The best memories are the unplanned ones. Just us being us — and that’s my favorite thing, Denise.',
+        'The best parts of us were never rehearsed. It is just your laugh, my hand reaching for yours, and love showing up like it always knew the way.',
       image: imageUrl(
         './assets/babesImages/WhatsApp Image 2026-02-14 at 3.45.50 PM.jpeg',
       ),
@@ -74,9 +82,9 @@ export const content: LoveTimelineContent = {
     },
     {
       date: '2026-02-14',
-      title: 'You make love look easy',
+      title: 'How you love me so gently',
       description:
-        'The way you show up, the way you care, the way you try — it makes me love you more every day, Mamacita.',
+        'The way you show up for me, especially in small moments, breaks me open in the best way. You make love feel sacred and safe at the same time.',
       image: imageUrl(
         './assets/babesImages/WhatsApp Image 2026-02-14 at 3.45.56 PM.jpeg',
       ),
@@ -84,9 +92,9 @@ export const content: LoveTimelineContent = {
     },
     {
       date: '2026-02-14',
-      title: 'Us, exactly as we are',
+      title: 'No mask, just us',
       description:
-        'No perfect script. Just real love, real smiles, and the feeling that we\'re on the same team, Denise.',
+        'With you I do not have to pretend to be anything else. You love me in my truth, and that kind of love is rarer than gold.',
       image: imageUrl(
         './assets/babesImages/WhatsApp Image 2026-02-14 at 3.45.57 PM.jpeg',
       ),
@@ -94,9 +102,9 @@ export const content: LoveTimelineContent = {
     },
     {
       date: '2026-02-14',
-      title: 'My heart feels safe here',
+      title: 'Where my heart feels safe',
       description:
-        'With you, love feels gentle and steady. Thank you for being my safe place, Mamacita.',
+        'You are the one place my heart does not have to defend itself. In your arms, even my fears sit down and rest.',
       image: imageUrl(
         './assets/babesImages/WhatsApp Image 2026-02-14 at 3.45.51 PM.jpeg',
       ),
@@ -104,9 +112,9 @@ export const content: LoveTimelineContent = {
     },
     {
       date: '2026-02-14',
-      title: 'Held close',
+      title: 'Hold me like forever',
       description:
-        'I love the way we fit — like home found home. I never want to let this kind of love go, Denise.',
+        'I love the way we fit, like two prayers meeting in the middle. If forever has a feeling, it feels like this.',
       image: imageUrl(
         './assets/babesImages/WhatsApp Image 2026-02-14 at 3.45.51 PM (1).jpeg',
       ),
@@ -114,9 +122,9 @@ export const content: LoveTimelineContent = {
     },
     {
       date: '2026-02-14',
-      title: 'More reasons to smile',
+      title: 'A thousand reasons to stay',
       description:
-        'Every photo is proof that love can be simple: one look, one laugh, one moment with you, Mamacita.',
+        'Every memory with you is another reason I choose us again. One glance from you can still make my heart forget how to act normal.',
       image: imageUrl(
         './assets/babesImages/WhatsApp Image 2026-02-14 at 3.45.52 PM.jpeg',
       ),
@@ -124,9 +132,9 @@ export const content: LoveTimelineContent = {
     },
     {
       date: '2026-02-14',
-      title: 'My favorite kind of beautiful',
+      title: 'Beautiful beyond the mirror',
       description:
-        'Not just pretty — but kind, strong, and full of light. I’m proud to love you, Denise Achana Wenawome.',
+        'Your beauty is not just in your face, it is in your kindness, your strength, your loyalty, your light. I am proud to love you out loud, every day.',
       image: imageUrl(
         './assets/babesImages/WhatsApp Image 2026-02-14 at 3.45.54 PM.jpeg',
       ),
@@ -134,9 +142,9 @@ export const content: LoveTimelineContent = {
     },
     {
       date: '2026-02-14',
-      title: 'A little “I love you”',
+      title: 'My heart keeps saying your name',
       description:
-        'Even in the smallest moments, my heart keeps saying the same thing: I love you, Mamacita. Always.',
+        'Even in silence, my heart is speaking and it keeps saying the same thing: I love you, I choose you, I thank God for you, always.',
       image: imageUrl(
         './assets/babesImages/WhatsApp Image 2026-02-14 at 3.45.56 PM (1).jpeg',
       ),
@@ -144,9 +152,9 @@ export const content: LoveTimelineContent = {
     },
     {
       date: '2026-02-14',
-      title: 'My favorite story',
+      title: 'The love story I will never outgrow',
       description:
-        'If love had a picture, it would feel like this — soft, real, and full of us. I love you, Denise.',
+        'If anyone asks what love looks like, I will show them this and say your name softly. You are my favorite chapter, my safest place, and my forever story.',
       image: imageUrl(
         './assets/babesImages/WhatsApp Image 2026-02-14 at 3.45.57 PM (1).jpeg',
       ),
